@@ -1,5 +1,15 @@
+/**
+ * FK
+ * 
+ * the Fk class
+ */
 class FK {
 
+    /**
+     * constructor
+     * 
+     * the contructor method
+     */
     constructor() {
 
         // tabela de origem

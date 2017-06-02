@@ -1,5 +1,15 @@
+/**
+ * Field
+ * 
+ * the field class
+ */
 class Field {
 
+    /**
+     * constructor
+     * 
+     * the constructor method
+     */
     constructor( name, table ) {
 
         // seta o campo
@@ -27,6 +37,11 @@ class Field {
         this._getFieldMetaData(); 
     }
     
+    /**
+     * _getFieldType
+     * 
+     * get the type of the field
+     */
     _getFieldType( value ) {
 
         // se for do tipo ENUM
@@ -82,6 +97,11 @@ class Field {
         }
     }
 
+    /**
+     * _getFieldMetaData
+     * 
+     * get the field metadata
+     */
     _getFieldMetaData() {
 
         // pega os metadados da tabela

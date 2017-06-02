@@ -1,7 +1,17 @@
 const Field = require( './field' );
 
+/**
+ * Table
+ * 
+ * the table class
+ */
 class Table {
 
+    /**
+     * constructor
+     * 
+     * the constructor method
+     */
     constructor( tblName, tblObject ) {
 
         // seta o objeto da tabela
@@ -20,6 +30,11 @@ class Table {
         this.parseFields();
     }
 
+    /**
+     * _getFieldNames
+     * 
+     * get the name of the fields
+     */
      _getFieldNames() {
 
         // variavel de retorna
@@ -34,6 +49,11 @@ class Table {
         return ret;
     }
 
+    /**
+     * field
+     * 
+     * get the field instance
+     */
     field( name ) {
 
         // percorre todas as tabelas
@@ -49,6 +69,11 @@ class Table {
         throw new Error( 'O campo '+name+' não existe na tabela '+this.name );
     }
 
+    /**
+     * onFields
+     * 
+     * execute a callback for each table's field
+     */
     onFields( callback ) {
 
         // para cada tabela
@@ -59,6 +84,11 @@ class Table {
         }
     }
 
+    /**
+     * parseFields
+     * 
+     * setup the fields
+     */
     parseFields() {
 
         // pega o nome dos campos
@@ -72,12 +102,24 @@ class Table {
         }
     }
 
+    /**
+     * hasForeaingKey
+     * 
+     * check if this table has foreign keys
+     */
     hasForeignKey() {
 
         // verifica se existe alguma foreign key
         return this.fks.length > 0 ? true : false;
     }
 
+    /**
+     * onForeignKeys
+     * 
+     * execute a callback for each foreign key
+     * 
+     * @param {*} callback 
+     */
     onForeignKeys( callback ) {
 
         // para cada foreign key
@@ -88,12 +130,22 @@ class Table {
         }
     }
 
+    /**
+     * getForeignKeys
+     * 
+     * get all foreign keys
+     */
     getForeignKeys() {
 
         // retorna as chaves estrangeiras
         return this.fks;
     }
 
+    /**
+     * onPrimaryKeys
+     * 
+     * get all primary keys
+     */
     onPrimaryKeys( callback ) {
         
         // pega as chaves primarias
@@ -107,6 +159,11 @@ class Table {
         }
     }
 
+    /**
+     * getPrimaryKeys
+     * 
+     * get all primary keys
+     */
     getPrimaryKeys() {
 
         // array de retorno

@@ -1,8 +1,20 @@
 const SequelizeAuto = require( 'sequelize-auto' );
 const Table = require( './classes/table' );
 const FK = require( './classes/fk' );
+
+/**
+ * Readdb
+ * 
+ * The main Readdb class
+ */
 class Readdb {
-    
+
+    /**
+     * constructor
+     * 
+     * the constructor method
+     * 
+     */
     constructor( database, user, pass, opt = {} ) {
         
         // array com as tabelas
@@ -12,6 +24,11 @@ class Readdb {
         this.auto = new SequelizeAuto( database, user, pass, opt );
     }
 
+    /**
+     * setup
+     * 
+     * connects with sequelize auto and read the database
+     */
     setup() {
         
         // retorna uma promessa
@@ -35,6 +52,11 @@ class Readdb {
         });
     }
 
+    /**
+     * serialize
+     * 
+     * creates the tables, fields and keys intances
+     */
     serialize() {
 
         // percorre as tabelas
@@ -70,6 +92,12 @@ class Readdb {
         }
     }
 
+    /**
+     * table
+     * 
+     * 
+     * provides access to a specific table
+     */
     table( name ) {
 
         // percorre todas as tabelas
@@ -85,6 +113,11 @@ class Readdb {
         throw new Error( 'A tabela '+name+' não existe' );
     }
 
+    /**
+     * onTables
+     * 
+     * executes a function to each table
+     */
     onTables( callback ) {
 
         // para cada tabela
