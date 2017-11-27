@@ -1,7 +1,7 @@
 # readdb
-Get your database metadata info
+Get your database metadata info  
 
-readdb is a package to get database metadata such as tables, fields, foreign and primary keys.
+readdb is a package to get database metadata such as tables, fields, foreign and primary keys.  
 
 ### install
 
@@ -11,19 +11,19 @@ npm install readdb --save
 ```
 
 ### usage
-First, you may require the readdb package
+First, you may require the readdb package  
 
 ```javascript
 const readdb = require( 'readdb');
 ```
 
-Then, instantiate a new readdb object and connect to your database usign the credentials like this
+Then, instantiate a new readdb object and connect to your database usign the credentials like this  
 
 ```javascript
 new readdb( 'database', 'user', 'password' )
 ```
 
-To finally use the readdb class, you need to call the method setup. This method returns a promise with the configured readdb object
+To finally use the readdb class, you need to call the method setup. This method returns a promise with the configured readdb object  
 
 ```javascript
 readdb.setup().then( readdb => {
@@ -42,7 +42,7 @@ readdb.setup().then( readdb => {
 });
 ```
 
-Check the full exemple code
+Check the full exemple code  
 ```javascript
 const readdb = require( 'readdb');
 
@@ -65,32 +65,32 @@ new readdb( 'database', 'user', 'password' ).setup().then( readdb => {
 ## Reference
 
 ### readb class
-`setup()` set the database mapping
-`onTables( callback )` executes a function for each table found on database
-`table()` gets a specific table of the database
+`setup()` set the database mapping  
+`onTables( callback )` executes a function for each table found on database  
+`table()` gets a specific table of the database  
 
 ### table class
-`name: string` name of the table
-`onFields( callaback )` execute a function for each field of the table
-`onForeignKeys( callback )` execute a function for each foreign key of the table
-`onPrimaryKeys( callback )` execute a function for each primary key of the table
+`name: string` name of the table  
+`onFields( callaback )` execute a function for each field of the table  
+`onForeignKeys( callback )` execute a function for each foreign key of the table  
+`onPrimaryKeys( callback )` execute a function for each primary key of the table  
 
 ### field class
-`name: string` name of the field
-`type: string` the type of the field
-`size: number` the size of the field
-`allowNull: boolean` if the field allows null values
-`defaultValue: string` the default value for this field
-`primaryKey: boolean` if a field is a primary key or not
+`name: string` name of the field  
+`type: string` the type of the field  
+`size: number` the size of the field  
+`allowNull: boolean` if the field allows null values  
+`defaultValue: string` the default value for this field  
+`primaryKey: boolean` if a field is a primary key or not  
 
 ## Instance options
 
-When you instantiate a new readdb class, it accepts four params. They are:
-`database: string` the database name
-`user: string` the database user
-`password: string` the password
-`option: object` and object with some configuration.
-The fourth param, options, acceppts this properties
+When you instantiate a new readdb class, it accepts four params. They are:  
+`database: string` the database name  
+`user: string` the database user  
+`password: string` the password  
+`option: object` and object with some configuration.  
+The fourth param, options, acceppts this properties  
 ```javascript
 var db = new readdb('database', 'user', 'pass', {
     host: 'localhost',
